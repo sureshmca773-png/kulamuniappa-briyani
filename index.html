@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Kulamuniappa Briyani</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+
+    <style>
+
+body{
+    margin: 0;
+    font-family: Arial;
+    background: url("https://images.unsplash.com/photo-1504674900247-0877df9cc836");
+    background-size: cover;
+    background-position: center;
+}
+
+/* DARK LAYER */
+.overlay{
+    background: rgba(0,0,0,0.65);
+    min-height: 100vh;
+    padding: 20px;
+    color: white;
+    text-align: center;
+}
+
+/* NAVBAR */
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(255,248,231,0.95);
+    padding: 10px 25px;
+    border-radius: 8px;
+}
+
+/* LOGO TEXT */
+.navbar strong{
+    color: #c62828;
+    font-family: 'Great Vibes', cursive;
+    font-size: 32px;
+    font-weight: normal;
+    letter-spacing: 1px;
+}
+/* NAV LINKS */
+.navbar a{
+    margin: 0 10px;
+    text-decoration: none;
+    color: #B8860B;
+    font-weight: bold;
+}
+
+/* LOGO IMAGE (550 FIX) */
+.logo-center img{
+    width: 550px;
+    margin-top: 15px;
+    animation: float 3s ease-in-out infinite;
+    filter: drop-shadow(0px 5px 15px rgba(0,0,0,0.4));
+}
+
+/* FLOAT ANIMATION */
+@keyframes float{
+    0%{ transform: translateY(0px); }
+    50%{ transform: translateY(-10px); }
+    100%{ transform: translateY(0px); }
+}
+
+/* COMING SOON */
+.coming{
+    font-family: 'Dancing Script', cursive;
+    font-size: 40px;
+    color: red;
+    animation: glowFloat 3s infinite ease-in-out;
+    margin-top: 20px;
+}
+
+/* GLOW + FLOAT */
+@keyframes glowFloat{
+    0%{
+        transform: translateY(0px);
+        text-shadow: 0 0 5px red;
+    }
+    50%{
+        transform: translateY(-10px);
+        text-shadow: 0 0 25px red;
+    }
+    100%{
+        transform: translateY(0px);
+        text-shadow: 0 0 5px red;
+    }
+}
+
+/* WELCOME */
+.welcome{
+    font-family: 'Dancing Script', cursive;
+    font-size: 28px;
+}
+
+/* TITLE */
+h1{
+    color: #B8860B;
+    font-size: 45px;
+}
+
+/* BOX */
+.box{
+    background: rgba(255,255,255,0.08);
+    margin: 20px auto;
+    padding: 20px;
+    width: 80%;
+    border-radius: 10px;
+}
+
+/* INPUT */
+input, textarea{
+    width: 90%;
+    padding: 10px;
+    margin: 8px;
+    border-radius: 5px;
+    border: none;
+}
+
+/* BUTTON */
+button{
+    background: #B8860B;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 25px;
+    cursor: pointer;
+}
+
+button:hover{
+    background: #a8740a;
+}
+
+/* SECTIONS */
+.section{
+    display: none;
+}
+
+.section.active{
+    display: block;
+}
+
+    </style>
+</head>
+
+<body>
+
+<div class="overlay">
+
+    <!-- NAVBAR -->
+    <div class="navbar">
+        <div>
+            <strong>Kulamuniappa Briyani</strong>
+        </div>
+
+        <div>
+            <a href="#" onclick="showSection('home')">Home</a>
+            <a href="#" onclick="showSection('about')">About</a>
+            <a href="#" onclick="showSection('career')">Career</a>
+            <a href="#" onclick="showSection('contact')">Contact</a>
+            <a href="#" onclick="showSection('gallery')">Gallery</a>
+        </div>
+    </div>
+
+    <!-- HOME -->
+    <div id="home" class="section active">
+
+        <p class="welcome">Welcome to</p>
+
+        <div class="logo-center">
+            <img src="Kulamuniappa briyani logo.png">
+        </div>
+
+        <div class="coming">Coming Soon</div>
+
+        <h1>KULAMUNIAPPA BRIYANI</h1>
+
+        <p>Authentic Tamil Nadu Taste</p>
+    </div>
+
+    <!-- ABOUT -->
+    <div id="about" class="section">
+        <div class="box">
+            <h2>About Us</h2>
+            <p>Kulamuniappa Briyani was born from a passion for authentic taste, quality ingredients, and traditional cooking methods. Our mission is to bring people together through unforgettable flavors and exceptional hospitality.
+
+Every briyani is prepared with carefully selected ingredients, aromatic spices, and a commitment to excellence. We believe that great food is not just about taste; it is about creating memorable experiences with family, friends, and loved ones.
+
+From everyday meals to special celebrations, we strive to serve dishes that reflect tradition, quality, and consistency. Our goal is to become a trusted destination for briyani lovers by delivering outstanding food and customer satisfaction in every serving.
+
+At Kulamuniappa Briyani, we are dedicated to preserving authentic flavors while continuously improving to meet the expectations of our customers. We look forward to serving you and being a part of your most memorable moments.
+</p>
+        </div>
+    </div>
+
+    <!-- CAREER -->
+    <div id="career" class="section">
+        <div class="box">
+            <h2>Career</h2>
+
+            <input type="text" placeholder="First Name">
+            <input type="text" placeholder="Last Name">
+            <input type="email" placeholder="Email">
+            <input type="file">
+            <textarea placeholder="Message"></textarea>
+
+            <button>Submit</button>
+        </div>
+    </div>
+
+    <!-- CONTACT -->
+<div id="contact" class="section">
+
+    <div class="contact-card">
+
+        <h2>Contact Us</h2>
+
+        <h3>We're Here To Help You</h3>
+
+        <p>
+            For Orders, Catering, Birthday Parties,
+            Office Events and Special Functions
+        </p>
+
+        <a href="tel:8838080340" class="contact-btn call-btn">
+            Call Now
+        </a>
+
+        <a target="_blank"
+        href="https://wa.me/918838080340?text=Hi%20Welcome%20to%20Kulamuniappa%20Briyani.%20How%20can%20we%20help%20you?"
+        class="contact-btn whatsapp-btn">
+            WhatsApp Now
+        </a>
+
+        <p style="margin-top:20px;">
+            Phone: 8838080340
+        </p>
+
+        <p>
+            Monday - Sunday<br>
+            10:00 AM - 9:30 PM
+        </p>
+
+    </div>
+
+</div>
+    <!-- GALLERY -->
+    <div id="gallery" class="section">
+        <div class="box">
+            <h2>Gallery</h2>
+            <p>Coming Soon...</p>
+        </div>
+    </div>
+
+</div>
+
+<script>
+function showSection(id){
+    let sections = document.querySelectorAll('.section');
+    sections.forEach(s => s.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+}
+</script>
+
+</body>
+</html>
