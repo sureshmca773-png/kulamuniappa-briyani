@@ -5,15 +5,17 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
-
+<link href="https://fonts.googleapis.com/css2?family=Allura&display=swap" rel="stylesheet">
     <style>
 
 body{
     margin: 0;
     font-family: Arial;
-    background: url("https://images.unsplash.com/photo-1504674900247-0877df9cc836");
+
+    background: url("https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1600");
     background-size: cover;
-    background-position: center;
+    background-position: 20% center;
+    background-attachment: fixed;
 }
 
 /* DARK LAYER */
@@ -30,14 +32,14 @@ body{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: rgba(255,248,231,0.95);
+    background: rgba(0,0,0,0.85);
     padding: 10px 25px;
     border-radius: 8px;
 }
 
 /* LOGO TEXT */
 .navbar strong{
-    color: #c62828;
+    color: #d4af37;
     font-family: 'Great Vibes', cursive;
     font-size: 32px;
     font-weight: normal;
@@ -102,6 +104,15 @@ h1{
     color: #B8860B;
     font-size: 45px;
 }
+.tagline{
+    font-family: 'Dancing Script', cursive;
+    font-size: 38px;
+    color: #ff4d4d;
+    font-weight: bold;
+    text-shadow: 0 0 10px rgba(255,0,0,0.7);
+    margin-top: -10px;
+    letter-spacing: 2px;
+}
 
 /* BOX */
 .box{
@@ -144,12 +155,426 @@ button:hover{
     display: block;
 }
 
+
+.briyani-showcase h2{
+    color:#d4a017;
+    font-size:50px;
+    font-family:'Dancing Script', cursive;
+    margin-top:30px;
+}
+
+.briyani-showcase p{
+    max-width:900px;
+    margin:auto;
+    font-size:22px;
+    line-height:1.8;
+}
+.briyani-showcase{
+    margin-top:50px;
+    text-align:center;
+}
+
+.briyani-showcase img{
+    width:900px;
+    max-width:95%;
+    border-radius:20px;
+    display:block;
+    margin:auto;
+}
+/* STEAM ANIMATION */
+.steam{
+    position:absolute;
+    width:150px;
+    height:150px;
+    background:rgba(255,255,255,0.4);
+    border-radius:50%;
+    filter:blur(30px);
+    animation:steam 4s infinite ease-in-out;
+}
+
+@keyframes steam{
+    0%{
+        transform:translateY(0px) scale(0.5);
+        opacity:0;
+    }
+    50%{
+        opacity:1;
+    }
+    100%{
+        transform:translateY(-150px) scale(1.5);
+        opacity:0;
+    }
+}
+/* LOADING SCREEN */
+#loader{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    z-index:9999;
+    overflow:hidden;
+}
+
+.left-door,
+.right-door{
+    position:absolute;
+    top:0;
+    width:50%;
+    height:100%;
+    transition:transform 2.5s ease-in-out;
+
+    box-shadow: inset 0 0 40px rgba(0,0,0,0.6),
+            0 0 30px rgba(212,175,55,0.2);
+}
+
+.left-door{
+    left:0;
+    background:
+    repeating-linear-gradient(
+        90deg,
+        #2b1b12 0px,
+        #2b1b12 25px,
+        #5a3a22 25px,
+        #5a3a22 50px
+    );
+    border-right:4px solid #d4af37;
+}
+
+.right-door{
+    right:0;
+    background:
+    repeating-linear-gradient(
+        90deg,
+        #2b1b12 0px,
+        #2b1b12 25px,
+        #5a3a22 25px,
+        #5a3a22 50px
+    );
+    border-left:4px solid #d4af37;
+}
+
+.loader-text{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    color:white;
+    text-align:center;
+    z-index:10000;
+}
+.loader-text{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%) scale(0.8);
+    color:white;
+    text-align:center;
+    z-index:10000;
+
+    animation: zoomIn 3s ease forwards;
+}
+
+.loader-text h1{
+    font-size:55px;
+    color:#d4af37;
+    margin:0;
+    text-shadow:
+0 0 10px rgba(212,175,55,0.8),
+0 0 20px rgba(212,175,55,0.6),
+0 0 40px rgba(212,175,55,0.4);
+}
+
+.loader-text p{
+    font-size:22px;
+}
+
+/* OPEN ANIMATION */
+/* GOLDEN FRAME DESIGN (LUXURY GATE) */
+.left-door::before,
+.right-door::before{
+    content:"";
+    position:absolute;
+    top:40px;
+    left:30px;
+    right:30px;
+    bottom:40px;
+    border:3px solid rgba(212,175,55,0.7);
+    border-radius:12px;
+    box-shadow: inset 0 0 25px rgba(212,175,55,0.4);
+}
+
+}
+
+.left-door::after{
+    right:25px;
+}
+
+.right-door::after{
+    left:25px;
+}
+/* CINEMATIC SLOW OPEN */
+.open .left-door{
+    transform: translateX(-100%) rotateY(-15deg);
+    transition: transform 3.5s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+.open .right-door{
+    transform: translateX(100%) rotateY(15deg);
+    transition: transform 3.5s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+.open .loader-text{
+    opacity:0;
+    transition:1s;
+}
+/* SMOKE EFFECT */
+.smoke{
+    position:absolute;
+    width:200px;
+    height:200px;
+    background:rgba(255,255,255,0.15);
+    filter:blur(40px);
+    border-radius:50%;
+    animation: smokeMove 6s infinite ease-in-out;
+}
+
+@keyframes smokeMove{
+    0%{ transform: translateY(0px) scale(0.8); opacity:0; }
+    50%{ opacity:1; }
+    100%{ transform: translateY(-120px) scale(1.4); opacity:0; }
+}
+
+
+.handwrite{
+    font-family:'Allura', cursive;
+    font-size:55px;
+    color:#d4af37;
+    margin-top:10px;
+    opacity:0;
+
+    animation: handwriting 1.5s ease forwards;
+    animation-delay:1.5s;
+}
+
+@keyframes handwriting{
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+@keyframes zoomIn{
+    0%{
+        transform:translate(-50%,-50%) scale(0.6);
+        opacity:0;
+    }
+    100%{
+        transform:translate(-50%,-50%) scale(1);
+        opacity:1;
+    }
+}
+#loader{
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+.contact-card{
+    background: rgba(0,0,0,0.6);
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 0 25px rgba(212,175,55,0.3);
+}
+
+.contact-card h2{
+    color: #d4af37;
+}
+
+.contact-card h3{
+    color: white;
+}
+
+.contact-card p{
+    font-size: 18px;
+}
+.social-links{
+    margin-top:20px;
+}
+
+.social-links p{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:10px;
+    margin:12px 0;
+    font-size:18px;
+}
+
+.social-links img{
+    width:24px;
+    height:24px;
+}
+
+.social-links a{
+    color:white;
+    text-decoration:none;
+    transition:0.3s;
+}
+
+.social-links a:hover{
+    color:#d4af37;
+}
+.contact-btn{
+    display:inline-block;
+    margin:10px 8px;
+    padding:12px 20px;
+    text-decoration:none;
+    color:white;
+    border-radius:30px;
+    font-weight:bold;
+    transition:0.3s;
+}
+
+.call-btn{
+    background:#8B0000;
+}
+
+.call-btn:hover{
+    background:#5c0000;
+}
+
+.whatsapp-btn{
+    background:#25D366;
+}
+
+.whatsapp-btn:hover{
+    background:#1da851;
+}
+#chatBotBtn{
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    background: #d4af37;
+    color: white;
+    font-size: 35px;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 9999;
+    box-shadow: 0 0 15px rgba(0,0,0,0.4);
+}
+#chatbot{
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 300px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.3);
+    overflow: hidden;
+    z-index: 9999;
+}
+
+#chat-header{
+    background: #d4af37;
+    color: white;
+    padding: 10px;
+    font-weight: bold;
+}
+
+#chat-body{
+    height: 200px;
+    overflow-y: auto;
+    padding: 10px;
+    color: black;
+}
+
+#userInput{
+    width: 65%;
+    padding: 8px;
+    border: none;
+}
+
+#chatbot button{
+    width: 30%;
+    padding: 8px;
+}
+.premium-caption{
+    margin-top: 25px;
+    display: inline-block;
+    padding: 15px 30px;
+    background: rgba(255,255,255,0.08);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(212,175,55,0.4);
+    border-radius: 50px;
+
+    font-size: 28px;
+    font-family: 'Dancing Script', cursive;
+    color: #fff;
+
+    text-shadow:
+        0 0 8px rgba(255,255,255,0.8),
+        0 0 15px rgba(212,175,55,0.8);
+
+    animation: shineText 3s infinite alternate;
+}
+
+.cloud-kitchen{
+    margin-top: 15px;
+    font-size: 32px;
+    font-family: 'Great Vibes', cursive;
+    color: #d4af37;
+
+    text-shadow:
+        0 0 10px rgba(212,175,55,0.9),
+        0 0 20px rgba(212,175,55,0.6);
+
+    animation: glowCloud 2s infinite alternate;
+}
+
+@keyframes glowCloud{
+    from{
+        transform: scale(1);
+    }
+
+    to{
+        transform: scale(1.05);
+        text-shadow:
+            0 0 20px rgba(212,175,55,1),
+            0 0 40px rgba(212,175,55,0.8);
+    }
+}
     </style>
 </head>
 
 <body>
+    <div id="loader">
+        <div class="smoke" style="left:20%; top:60%;"></div>
+<div class="smoke" style="left:70%; top:65%; animation-delay:2s;"></div>
+
+    <div class="left-door"></div>
+
+    <div class="right-door"></div>
+
+    <div class="loader-text">
+    <h1 class="typewriter">Kulamuniappa Briyani</h1>
+    <p class="handwrite">Every Bite, A Celebration</p>
+</div>
+
+
+</div>
 
 <div class="overlay">
+
 
     <!-- NAVBAR -->
     <div class="navbar">
@@ -175,24 +600,70 @@ button:hover{
             <img src="Kulamuniappa briyani logo.png">
         </div>
 
-        <div class="coming">Coming Soon</div>
+        
 
         <h1>KULAMUNIAPPA BRIYANI</h1>
 
-        <p>Authentic Tamil Nadu Taste</p>
+        <p class="tagline">Authentic Tamil Nadu Taste</p>
+        <div class="briyani-showcase">
+    
+
+    <div style="position:relative; display:inline-block;">
+
+        <div class="steam" style="left:180px; top:50px;"></div>
+        <div class="steam" style="left:350px; top:30px; animation-delay:1s;"></div>
+        <div class="steam" style="left:520px; top:50px; animation-delay:2s;"></div>
+
+        <img src="briyani-aroma-new.png" alt="Hot Briyani">
+
     </div>
+    <p class="premium-caption">
+    For Orders, Catering, Birthday Parties, Office Events & Special Functions
+</p>
+
+<p class="cloud-kitchen">
+    ☁️ Premium Cloud Kitchen
+</p>
+
+</div>
+</div>
+   
 
     <!-- ABOUT -->
     <div id="about" class="section">
         <div class="box">
-            <h2>About Us</h2>
-            <p>Kulamuniappa Briyani was born from a passion for authentic taste, quality ingredients, and traditional cooking methods. Our mission is to bring people together through unforgettable flavors and exceptional hospitality.
+           <h2>About Us</h2>
 
-Every briyani is prepared with carefully selected ingredients, aromatic spices, and a commitment to excellence. We believe that great food is not just about taste; it is about creating memorable experiences with family, friends, and loved ones.
+<p>
+Kulamuniappa Briyani is a proudly emerging premium food brand founded by <b>P. Suresh Perumal</b>, officially established on <b>7 June 2026</b>. Our journey began with a deep passion for authentic Tamil Nadu cuisine and a strong vision to bring traditional flavors to a modern dining experience. From humble beginnings to a growing culinary identity, we are committed to delivering excellence in every plate we serve.
+</p>
 
-From everyday meals to special celebrations, we strive to serve dishes that reflect tradition, quality, and consistency. Our goal is to become a trusted destination for briyani lovers by delivering outstanding food and customer satisfaction in every serving.
+<p>
+At Kulamuniappa Briyani, we believe food is more than just nourishment – it is an emotion that connects people, memories, and culture. Every dish is carefully crafted using handpicked ingredients, aromatic spices, and traditional cooking techniques that have been passed down through generations. Our goal is to preserve the true essence of South Indian cuisine while maintaining a premium and consistent quality experience for every customer.
+</p>
 
-At Kulamuniappa Briyani, we are dedicated to preserving authentic flavors while continuously improving to meet the expectations of our customers. We look forward to serving you and being a part of your most memorable moments.
+<p>
+We take pride in our signature briyani, which is slow-cooked to perfection, ensuring every grain of rice carries rich flavor and aroma. Along with briyani, we also serve a variety of side dishes that complement and enhance the overall dining experience. Hygiene, freshness, and authenticity are our top priorities in every preparation.
+</p>
+
+<p>
+Beyond food, Kulamuniappa Briyani represents a promise – a promise of trust, quality, and satisfaction. Whether it is a small family meal, a festive celebration, or a large-scale event, we aim to make every moment special with our food and hospitality.
+</p>
+
+<p>
+We also specialize in catering services for birthdays, weddings, corporate events, and special occasions. Our dedicated team ensures timely service, consistent taste, and a memorable experience for all our customers.
+</p>
+
+<p>
+As we continue to grow, our mission remains unchanged – to become one of the most trusted and loved briyani destinations in Tamil Nadu by delivering authentic taste, premium quality, and unforgettable experiences.
+</p>
+
+<br>
+
+<p style="text-align:center; color:#d4af37; font-size:26px; font-weight:bold; line-height:1.8;">
+Established: 07 June 2026 <br>
+Founder: P. Suresh Perumal <br>
+Vision: Authentic Taste • Premium Quality • Customer Satisfaction • Tradition & Trust
 </p>
         </div>
     </div>
@@ -239,6 +710,23 @@ At Kulamuniappa Briyani, we are dedicated to preserving authentic flavors while 
         <p style="margin-top:20px;">
             Phone: 8838080340
         </p>
+        <div class="social-links">
+
+    <p>
+        <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png">
+        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=kulamuniappabriyani@gmail.com" target="_blank">
+            kulamuniappabriyani@gmail.com
+        </a>
+    </p>
+
+    <p>
+        <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png">
+        <a href="https://www.instagram.com/kulamuniappa_briyani/" target="_blank">
+    @kulamuniappa_briyani
+</a>
+    </p>
+
+</div>
 
         <p>
             Monday - Sunday<br>
@@ -264,7 +752,128 @@ function showSection(id){
     sections.forEach(s => s.classList.remove('active'));
     document.getElementById(id).classList.add('active');
 }
-</script>
+window.onload = function() {
 
+    let typingTime = 5700; // typing finish time
+
+    setTimeout(function(){
+        document.getElementById("loader").classList.add("open");
+    }, typingTime);
+
+    setTimeout(function(){
+        document.getElementById("loader").style.display = "none";
+        document.getElementById("chatBotBtn").style.display = "flex";
+    }, typingTime + 1500);
+
+};
+function sendMessage() {
+
+    let input = document.getElementById("userInput");
+    let message = input.value.trim().toLowerCase();
+
+    if (message === "") return;
+
+    let chatBody = document.getElementById("chat-body");
+
+    chatBody.innerHTML += `<p><b>You:</b> ${input.value}</p>`;
+
+    let reply = "";
+
+    // Greetings
+    if (message.match(/hi|hello|hey|vanakkam/)) {
+        reply = "🙏 Welcome to Kulamuniappa Briyani. How may I assist you today?";
+    }
+
+    // Menu / Food
+    else if (message.match(/menu|food|special|today special|dishes|briyani/)) {
+        reply = "🍛 Our Signature Dishes:<br>• Chicken Briyani<br>• Mutton Briyani<br>• Chicken 65<br>• BBQ Chicken<br>• Family Packs<br><br>Visit us to experience authentic Tamil Nadu flavors.";
+    }
+
+    // Catering
+    else if (message.match(/catering|party|birthday|event|function|office/)) {
+        reply = "🎉 Yes, we provide catering services for Birthday Parties, Office Events, Family Functions and Special Occasions. Please contact us for bookings.";
+    }
+
+    // Job
+    else if (message.match(/job|career|vacancy|work|employment/)) {
+        reply = "💼 Thank you for your interest in joining Kulamuniappa Briyani.<br><br>Please send your resume through our Career section or email us at:<br><b>kulamuniappabriyani@gmail.com</b>";
+    }
+
+    // Contact
+    else if (message.match(/contact|phone|call|number|connect/)) {
+        reply = "📞 Contact Number:<br><b>8838080340</b><br><br>📧 Email:<br><b>kulamuniappabriyani@gmail.com</b>";
+    }
+
+    // WhatsApp
+    else if (message.match(/whatsapp/)) {
+        reply = "📱 WhatsApp Support:<br><b>+91 8838080340</b>";
+    }
+
+    // Email
+    else if (message.match(/email|mail/)) {
+        reply = "📧 Email us at:<br><b>kulamuniappabriyani@gmail.com</b>";
+    }
+
+    // Instagram
+    else if (message.match(/instagram|insta|social media/)) {
+        reply = "📷 Follow us on Instagram:<br><b>@kulamuniappa_briyani</b>";
+    }
+
+    // Location
+    else if (message.match(/location|address|where|place|map/)) {
+        reply = "📍 Kulamuniappa Briyani<br>Vellore, Tamil Nadu, India.";
+    }
+
+    // Timings
+    else if (message.match(/time|timing|open|close|working hours/)) {
+        reply = "🕒 Business Hours:<br>Monday - Sunday<br><b>10:00 AM - 9:30 PM</b>";
+    }
+
+    // About
+    else if (message.match(/about|who are you|history/)) {
+        reply = "🏆 Kulamuniappa Briyani is dedicated to serving authentic Tamil Nadu style briyani prepared with premium ingredients, traditional recipes and unforgettable taste.";
+    }
+
+    // Thanks
+    else if (message.match(/thank|thanks/)) {
+        reply = "😊 You're most welcome. We look forward to serving you at Kulamuniappa Briyani.";
+    }
+
+    // Default
+    else {
+        reply = "🤖 I can assist you regarding:<br><br>🍛 Menu<br>📍 Location<br>📞 Contact Details<br>🎉 Catering Services<br>💼 Careers<br>🕒 Timings<br><br>Please ask me anything about Kulamuniappa Briyani.";
+    }
+
+    chatBody.innerHTML += `<p><b>AI:</b> ${reply}</p>`;
+
+    input.value = "";
+    chatBody.scrollTop = chatBody.scrollHeight;
+}
+function toggleChat(){
+    let chat = document.getElementById("chatbot");
+
+    if(chat.style.display === "none"){
+        chat.style.display = "block";
+    } else {
+        chat.style.display = "none";
+    }
+}
+
+</script>
+<div id="chatbot" style="display:none;">
+    <div id="chat-header">🤖 Kulamuniappa AI</div>
+
+    <div id="chat-body">
+        <p><b>AI:</b> Hi 👋 Welcome to Kulamuniappa Briyani!</p>
+        <p><b>AI:</b> How can I help you?</p>
+    </div>
+
+    <input type="text" id="userInput" placeholder="Type your message...">
+    <button onclick="sendMessage()">Send</button>
+</div>
+<div id="chatBotBtn" onclick="toggleChat()">
+    🤖
+</div>
+</div> <!-- overlay close -->
 </body>
 </html>
